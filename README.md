@@ -111,3 +111,7 @@ nó tận dụng lợi thế của container để build, test nhanh chóng,có 
 - Khi xây dựng ứng dụng và cần scale một cách linh hoạt.
 - Khi bạn muốn không tốn khá nhiều thời gian để config máy local và server cùng một môi trường để chạy được ứng dụng. Bạn chỉ cần build 1 lần chạy ở nhiều nơi mà thôi.
 - Sản phẩm của công ty bạn cần một cách tiếp cận mới về xây dựng, đẩy lên server, thực thi ứng dụng một cách nhanh chóng dễ dàng.
+
+
+# Cài đặt Docker trên môi trường window/linux/vscode (linux sử dụng wsl2 trên window)
+_Bổ sung_
