@@ -10,59 +10,65 @@ Task 3
 - Docker là một công cụ giúp cho việc tạo ra và triển khai các container để phát triển, chạy ứng dụng được dễ dàng. Các container là môi trường, mà ở đó lập trình viên đưa vào các thành phần cần thiết để ứng dụng của họ chạy được, bằng cách đóng gói ứng dụng cùng với container như vậy, nó đảm bảo ứng dụng chạy được và giống nhau ở các máy khác nhau (Linux, Windows, Desktop, Server ...)
 - Docker mang lại lợi ích cho cả lập trình viên lẫn quản trị hệ thống, sử dụng Docker lập trình viên tập trung vào mà viết code chứ không lo lắng về việc triển khai, không lo lắng ở máy của lập trình viên chạy được, máy khác lại không chạy được ...
 
-Docker cung cấp một lớp trừu tượng và tự động ảo hóa dựa trên linux. 
-Docker sử dụng những tài nguyên cô lập của linux như cgroup,kernel. quản lý têp để cho 
-phép các container chạy độc lập bên trong một thực thể linux
+- Docker cung cấp một lớp trừu tượng và tự động ảo hóa dựa trên linux. 
+- Docker sử dụng những tài nguyên cô lập của linux như cgroup,kernel. quản lý têp để cho 
+- phép các container chạy độc lập bên trong một thực thể linux
 
 Là nền tảng để cung cấp cách để building, deploying và running ứng dụng dễ dàng hơn bằng cách sử dụng các containers(trên nền tảng ảo hóa). Ban đầu viết bằng 
 Python, hiện tại đã chuyển sang Golang
 
 # Ưu điểm của Docker :
-Environment : Gọi nôm na là môi trường xử lý của ứng dụng. ví dụ mình cần môi trường để chạy ứng dụng java, php, python, ….  để chạy 1 site wordpress thì mình phải cài php, apache. mysql, với Docker thì mình chỉ cần 1 câu lệnh docker run là có ngay môi trường để chạy site wordpress không cần cài đặt gì cả.
-Reduced Risk : Giảm sự cố khi đưa lên production. Mình chỉ cần build, test ok cái image app rồi lên server production pull nó về run là ok.
-Portability across machines :  Ứng dụng và tất cả các thành phần cần thiết để run ứng dụng đó mình chỉ cần build nó nằm trong 1 container,  Sau đó mình có thể share  hoặc là chuyển nó tới bất kỳ hệ thống nào có chạy docker engine là nó chạy mướt luôn, không có lỗi gì.
-Scale :  Khi mà 1 app nó đang thiếu resource thì mình chỉ cần ghỏ lệnh scale nó lên, cái này mình sẽ thấy rỏ trong Docker Swarm Mode
+
+- Environment : Gọi nôm na là môi trường xử lý của ứng dụng. ví dụ mình cần môi trường để chạy ứng dụng java, php, python, ….  để chạy 1 site wordpress thì mình phải cài php, - apache. mysql, với Docker thì mình chỉ cần 1 câu lệnh docker run là có ngay môi trường để chạy site wordpress không cần cài đặt gì cả.
+
+- Reduced Risk : Giảm sự cố khi đưa lên production. Mình chỉ cần build, test ok cái image app rồi lên server production pull nó về run là ok.
+
+- Portability across machines :  Ứng dụng và tất cả các thành phần cần thiết để run ứng dụng đó mình chỉ cần build nó nằm trong 1 container,  Sau đó mình có thể share  hoặc là chuyển nó tới bất kỳ hệ thống nào có chạy docker engine là nó chạy mướt luôn, không có lỗi gì.
+
+- Scale :  Khi mà 1 app nó đang thiếu resource thì mình chỉ cần ghỏ lệnh scale nó lên, cái này mình sẽ thấy rỏ trong Docker Swarm Mode
 
 
 # Nhược điểm
 - Nhược điểm của docker là không thể chạy trực tiếp trên Windows và MAC OS. Chính vì thế, khi các bạn sử dụng Docker trên Windows hay MAC OS thì Docker sẽ phải run một máy ảo linux rồi mới có thể thực thi được.
+
 - Không phải app nào củng containerized được.
+
 - Container nó sài shared OS kernel Linux nên nếu có vấn đề gì ảnh hưởng tới OS kernel của Node thì nó củng bị ảnh hưởng.
+
 - Số lượng container càng lớn thì càng phức tạp.
+
 - Phải follow và improve liên tục nếu muốn chạy nó trên production để control được Docker vì nó không có stable ( điều này là dĩ nhiên vì đây là open source )
 
 # Container trong Docker
 
-Các container cho phép lập trình viên đóng gói một ứng dụng với tất cả các phần cần thiết,chẳng hạn như thư viện và các phụ thuốc khác và gói tất cả ra dưới 
+- Các container cho phép lập trình viên đóng gói một ứng dụng với tất cả các phần cần thiết,chẳng hạn như thư viện và các phụ thuốc khác và gói tất cả ra dưới 
 
 dạng một package
 
-Bằng cách đó, nhờ vào container, ứng dụng sẽ chạy trên mọi máy Linux khác bất kể mọi cài đặt tùy chỉnh mà máy có thể có khác với máy được sử dụng để viết 
+- Bằng cách đó, nhờ vào container, ứng dụng sẽ chạy trên mọi máy Linux khác bất kể mọi cài đặt tùy chỉnh mà máy có thể có khác với máy được sử dụng để viết 
 
 ccode,
 
-Theo một cách nào đó ,Docker khá giống với virtual machine,Nhưng nguyên nhân mà Docker Phát triển là do:
+- Theo một cách nào đó ,Docker khá giống với virtual machine,Nhưng nguyên nhân mà Docker Phát triển là do:
 
 # Tính dễ ứng dụng:
-rất dễ cho mọi người sử dụng từ lập trình viên,sys admin...
+- Rất dễ cho mọi người sử dụng từ lập trình viên,sys admin...
 
 nó tận dụng lợi thế của container để build, test nhanh chóng,có thể đóng gói ứng dụng trên laptop của họ và chạy trên public cloud,private cloud...
 
-Câu thần chú là "Build once,run anywhere".
+- Câu thần chú là "Build once,run anywhere".
 
 # Docker container rất nhẹ và nhanh:
-Bạn có thể tạo và chạy docker container trong vài giây
+- Bạn có thể tạo và chạy docker container trong vài giây
 
 #Môi trường chạy và khả năng mở rộng: 
-Bạn có thể chia nhỏ những chức năng của ứng dụng thành các container riêng lẻ . 
+- Bạn có thể chia nhỏ những chức năng của ứng dụng thành các container riêng lẻ . 
 
-Ví dụ trong database chạy trên một 
+- Ví dụ trong database chạy trên một container và redis cache có thể chạy trên một container khác trong khi ứng dụng Node.js lại chạy trên một cái khác nữa 
 
-container và redis cache có thể chạy trên một container khác trong khi ứng dụng Node.js lại chạy trên một cái khác nữa 
+- Với docker rất dễ để liên kết các container với nhau để tạo thành một ứng dụng, làm cho nó dễ dàng scale,update các thành phần độc lập với nhau.
 
-Với docker rất dễ để liên kết các container với nhau để tạo thành một ứng dụng, làm cho nó dễ dàng scale,update các thành phần độc lập với nhau.
-
-Là thành phần quan trọng trong một phần của devops
+- Là thành phần quan trọng trong một phần của devops
 
 
 - Các khái niệm liên quan
@@ -90,18 +96,18 @@ Là thành phần quan trọng trong một phần của devops
 # Như trong hình vẽ, một hệ thống Docker được thực thi với 3 bước chính :
 - Build -> Push -> Pull,Run
 
-- Build
-Đầu tiên tạo một dockerfile, trong dockerfile này chính là code của chúng ta. Dockerfile này sẽ được Build tại một máy tính đã cài đặt Docker Engine. Sau khi build ta sẽ có được Container, trong Container này chứa ứng dụng kèm bộ thư viện của chúng ta.
-- Push
-Sau khi có được Container, chúng ta thực hiện push Container này lên cloud và lưu tại đó.
+# Build
+- Đầu tiên tạo một dockerfile, trong dockerfile này chính là code của chúng ta. Dockerfile này sẽ được Build tại một máy tính đã cài đặt Docker Engine. Sau khi build ta sẽ có được Container, trong Container này chứa ứng dụng kèm bộ thư viện của chúng ta.
+# Push
+- Sau khi có được Container, chúng ta thực hiện push Container này lên cloud và lưu tại đó.
 
-- Pull, Run
-Nếu một máy tính khác muốn sử dụng Container chúng ta thì bắt buộc máy phải thực hiện việc Pull container này về máy, tất nhiên máy này cũng phải cài Docker Engine. Sau đó thực hiện Run Container này.
+# Pull, Run
+- Nếu một máy tính khác muốn sử dụng Container chúng ta thì bắt buộc máy phải thực hiện việc Pull container này về máy, tất nhiên máy này cũng phải cài Docker Engine. Sau đó thực hiện Run Container này.
 
 # .
 # Vậy khi nào sử dụng Docker?
 
-Triển khai kiến trúc Microservices.
-Khi xây dựng ứng dụng và cần scale một cách linh hoạt.
-Khi bạn muốn không tốn khá nhiều thời gian để config máy local và server cùng một môi trường để chạy được ứng dụng. Bạn chỉ cần build 1 lần chạy ở nhiều nơi mà thôi.
-Sản phẩm của công ty bạn cần một cách tiếp cận mới về xây dựng, đẩy lên server, thực thi ứng dụng một cách nhanh chóng dễ dàng.
+- Triển khai kiến trúc Microservices.
+- Khi xây dựng ứng dụng và cần scale một cách linh hoạt.
+- Khi bạn muốn không tốn khá nhiều thời gian để config máy local và server cùng một môi trường để chạy được ứng dụng. Bạn chỉ cần build 1 lần chạy ở nhiều nơi mà thôi.
+- Sản phẩm của công ty bạn cần một cách tiếp cận mới về xây dựng, đẩy lên server, thực thi ứng dụng một cách nhanh chóng dễ dàng.
