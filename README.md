@@ -115,3 +115,69 @@ nó tận dụng lợi thế của container để build, test nhanh chóng,có 
 
 # Cài đặt Docker trên môi trường window/linux/vscode (linux sử dụng wsl2 trên window)
 _Bổ sung_
+
+# 1 - Cài đặt WSL / WSL2 trên Windows 10 để code như trên Ubuntu
+Windows support "cài cả Ubuntu trên Win"
+
+- Một vài cái chính dùng để code trên Ubuntu dự kiến cần setup được trên Win đó là:
+- Docker
+- Terminal (Konsole)
+- ZSH / Fish
+- VSCode
+- Git
+- PHP
+- Node.js
+- Golang
+
+- Ghé qua trang chủ để tải file cài đặt Docker cho Windows về 
+
+https://www.docker.com/products/docker-desktop.
+
+*mở file cài đặt thì ăn ngay quả message Hyper-V feature is required
+
+Mà cái feature này lại không có trên Windows 10 Home. Quá nhọ! Lại phải cài lại Win và xin ngay quả key cho Windows 10 Enterprise 😄
+
+- Thế nên anh em nào muốn dùng docker trên windows 10 thì phải xem xét điều này trước tiên nhé
+
+# .
+Bước tiếp theo sau khi có edition phù hợp, hỗ trợ Hyper-V, mình tiếp tục bật chức năng này lên theo document của Microsoft, vắn tắt lại thì cần làm như sau:
+
+- Kiểm tra câu hình yêu cầu: 64bits, RAM từ 4GB, windows pro hoặc enterprise hoặc - education
+
+- Mở Powershell với quyền Administrator
+
+- Chạy lệnh sau:
+
+*Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
+
+
+
+- Reboot máy là xong
+# Hoặc nếu thích dùng UI thì:
+
+- Window + R, nhập Control để vào Control Panel
+- Chọn Programs, ở mục Programs and Features chọn Turn Windows feature on or off
+- Hộp thoại xuất hiện thì tích chọn Hyper-V, lưu lại rồi reboot là xong
+
+![2](https://user-images.githubusercontent.com/54676091/92068118-3e27d600-edd0-11ea-8a46-f901f0010258.png)
+
+
+Sau khi reboot, bật Docker lên và cuối cùng nó cũng đã chạy.
+Mình thử chạy vài lệnh với docker trên Powershell để kiểm tra và mọi thứ đã OK.
+
+*docker info
+*docker ps
+
+
+# -------------------------------------------------------------
+
+# Cài đặt WSL + cấu hình với Docker
+Sau khi cài đặt docker thành công
+- Cần mang lại Konsole về Windows
+
+
+
+
+
+
+
