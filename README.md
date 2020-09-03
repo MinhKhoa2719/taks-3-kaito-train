@@ -374,15 +374,15 @@ WSL 1.
 
 
 
-- 1. Mở Start.
+- 1 Mở Start.
 
 
 
-- 2. Tìm kiếm Turn Windows features on or off và nhấp vào kết quả trên cùng để mở trải nghiệm.
+- 2 Tìm kiếm Turn Windows features on or off và nhấp vào kết quả trên cùng để mở trải nghiệm.
 
 
 
-- 3. Tích vào tùy chọn Windows Subsystem for Linux.
+- 3 Tích vào tùy chọn Windows Subsystem for Linux.
 
 
 
@@ -392,11 +392,11 @@ WSL 1.
 
 
 
-- 4. Nhấp vào nút OK.
+- 4 Nhấp vào nút OK.
 
 
 
-- 5. Nhấp vào nút Restart.
+- 5 Nhấp vào nút Restart.
 
 
 
@@ -417,15 +417,15 @@ dụng kiến ​​trúc mới.
 
 
 
-- 1. Mở Start.
+- 1 Mở Start.
 
 
 
-- 2. Tìm kiếm PowerShell, bấm chuột phải vào kết quả trên cùng và chọn tùy chọn Run as administrator.
+- 2 Tìm kiếm PowerShell, bấm chuột phải vào kết quả trên cùng và chọn tùy chọn Run as administrator.
 
 
 
-- 3. Nhập lệnh sau để bật tính năng Virtual Machine Platform và nhấn Enter:
+- 3 Nhập lệnh sau để bật tính năng Virtual Machine Platform và nhấn Enter:
 
 *Enable-WindowsOptionalFeature -Online -FeatureName VirtualMachinePlatform
 
@@ -437,7 +437,7 @@ dụng kiến ​​trúc mới.
 
 
 
-- 4. Khởi động lại máy tính.
+- 4 Khởi động lại máy tính.
 
 
 
@@ -455,23 +455,23 @@ dụng kiến ​​trúc mới.
 
 
 
-- *1. Tải xuống bản cập nhật kernel WSL 2 này (bắt buộc).
+- 1 Tải xuống bản cập nhật kernel WSL 2 này (bắt buộc).
 
 https://quantrimang.com/url?q=aHR0cHM6Ly93c2xzdG9yZXN0b3JhZ2UuYmxvYi5jb3JlLndpbmRvd3MubmV0L3dzbGJsb2Ivd3NsX3VwZGF0ZV94NjQubXNp
 
 
 
-- *2. Bấm đúp vào file wsl_update_x64.msi và áp dụng bản cập nhật.
+- 2 Bấm đúp vào file wsl_update_x64.msi và áp dụng bản cập nhật.
 
 
-- *3. Mở Start.
+- 3 Mở Start.
 
 
-- *4. Mở PowerShell với quyền admin.
+- 4 Mở PowerShell với quyền admin.
 
 
 
-- *5. Nhập lệnh sau để biến Windows Subsystem for Linux 2 thành kiến ​​trúc mặc định cho các bản phát hành mới mà bạn cài đặt và nhấn Enter:
+- 5. Nhập lệnh sau để biến Windows Subsystem for Linux 2 thành kiến ​​trúc mặc định cho các bản phát hành mới mà bạn cài đặt và nhấn Enter:
 
 *wsl --set-default-version 2
 
@@ -479,7 +479,9 @@ https://quantrimang.com/url?q=aHR0cHM6Ly93c2xzdG9yZXN0b3JhZ2UuYmxvYi5jb3JlLndpbm
 
 *Biến Windows Subsystem for Linux 2 thành kiến ​​trúc mặc định
 
-- *6. Nhập lệnh sau để chuyển đổi bản phân phối từ WSL 1 sang WSL 2 và nhấn Enter:
+.
+
+- 6. Nhập lệnh sau để chuyển đổi bản phân phối từ WSL 1 sang WSL 2 và nhấn Enter:
 
 
 
@@ -493,7 +495,7 @@ https://quantrimang.com/url?q=aHR0cHM6Ly93c2xzdG9yZXN0b3JhZ2UuYmxvYi5jb3JlLndpbm
 
 
 
-- *7. Trong lệnh, đảm bảo thay đổi Ubuntu thành tên của bản phân phối mà bạn muốn chuyển đổi. Nếu không biết tên, bạn có thể sử dụng lệnh wsl -l -v.
+- 7 Trong lệnh, đảm bảo thay đổi Ubuntu thành tên của bản phân phối mà bạn muốn chuyển đổi. Nếu không biết tên, bạn có thể sử dụng lệnh wsl -l -v.
 
 
 
