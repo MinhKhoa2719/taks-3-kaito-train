@@ -1,11 +1,22 @@
 # taks-3-kaito-train
 
+![498](https://user-images.githubusercontent.com/54676091/92079752-a5528400-edea-11ea-939a-82bba026b474.png)
+-Docker Hub: là nơi lưu trữ Docker Images. Bạn sẽ tìm thấy Docker image trên Docker Hub hoàn toàn miễn phí.
+-Docker Client: Cách mà bạn tương tác với docker thông qua command trong terminal. Docker Client sẽ sử dụng API gửi lệnh tới Docker Daemon.
+-Docker Daemon: Quản lý images, containers, networks và volume.
+-Docker Volumes: Nơi lưu trữ dữ liệu cho việc sử dụng và tạo apps.
+-Docker Networking: cho phép kết nối các container lại với nhau.
+-Docker Compose: Có sẵn khi cài Docker, là công cụ cho phép run app với nhiều Docker containers 1 cách dễ dàng hơn. Docker Compose cho phép bạn config các command trong file docker-compose.yml để sử dụng lại.
+-Docker Swarm: để phối hợp triển khai container.
+-Docker Desktop: là một công cụ dành cho máy MacOS và Windows để xây dựng và chia sẻ các ứng dụng và dịch vụ được đóng gói.
+-Docker Registry: là nơi lưu trữ riêng của Docker Images. Images được push vào registry và client sẽ pull images từ registry. Có thể sử dụng registry của riêng bạn hoặc registry của các nhà cung cấp như : AWS, Google Cloud, Microsoft Azure.
+
+# -------
 - Docker là gì? ưu điểm nhược điểm ?
 - Cài đặt Docker trên môi trường window/linux/vscode (linux sử dụng wsl2 trên window)
 - Demo
 
-Task 3
-
+#--------
 - Docker là một dự án mã nguồn mở giúp tự động triển khai các ứng dụng Linux và Window vào trong các container ảo hóa,
 - Docker là một công cụ giúp cho việc tạo ra và triển khai các container để phát triển, chạy ứng dụng được dễ dàng. Các container là môi trường, mà ở đó lập trình viên đưa vào các thành phần cần thiết để ứng dụng của họ chạy được, bằng cách đóng gói ứng dụng cùng với container như vậy, nó đảm bảo ứng dụng chạy được và giống nhau ở các máy khác nhau (Linux, Windows, Desktop, Server ...)
 - Docker mang lại lợi ích cho cả lập trình viên lẫn quản trị hệ thống, sử dụng Docker lập trình viên tập trung vào mà viết code chứ không lo lắng về việc triển khai, không lo lắng ở máy của lập trình viên chạy được, máy khác lại không chạy được ...
@@ -61,7 +72,7 @@ nó tận dụng lợi thế của container để build, test nhanh chóng,có 
 # Docker container rất nhẹ và nhanh:
 - Bạn có thể tạo và chạy docker container trong vài giây
 
-#Môi trường chạy và khả năng mở rộng: 
+# Môi trường chạy và khả năng mở rộng: 
 - Bạn có thể chia nhỏ những chức năng của ứng dụng thành các container riêng lẻ . 
 
 - Ví dụ trong database chạy trên một container và redis cache có thể chạy trên một container khác trong khi ứng dụng Node.js lại chạy trên một cái khác nữa 
@@ -88,7 +99,11 @@ nó tận dụng lợi thế của container để build, test nhanh chóng,có 
 - Dockerfile: là một tập tin bao gồm các chỉ dẫn để build một image .
 - Volumes: là phần dữ liệu được tạo ra khi container được khởi tạo.
 *Ngoài ra còn nhiều khái niệm nữa như swarm, compose…
+
+
 .
+
+
 # Quy trình thực thi của một hệ thống sử dụng Docker
 
 ![2](https://user-images.githubusercontent.com/54676091/91886016-e3e52300-ecb2-11ea-9dd2-c7b0bdfaae86.png)
@@ -137,9 +152,10 @@ https://www.docker.com/products/docker-desktop.
 
 Mà cái feature này lại không có trên Windows 10 Home. Quá nhọ! Lại phải cài lại Win và xin ngay quả key cho Windows 10 Enterprise 😄
 
-- Thế nên anh em nào muốn dùng docker trên windows 10 thì phải xem xét điều này trước tiên nhé
+- Thế nên muốn dùng docker trên windows 10 thì phải xem xét điều này trước tiên
 
 # .
+
 Bước tiếp theo sau khi có edition phù hợp, hỗ trợ Hyper-V, mình tiếp tục bật chức năng này lên theo document của Microsoft, vắn tắt lại thì cần làm như sau:
 
 - Kiểm tra câu hình yêu cầu: 64bits, RAM từ 4GB, windows pro hoặc enterprise hoặc - education
@@ -255,6 +271,67 @@ https://quantrimang.com/url?q=aHR0cHM6Ly93c2xzdG9yZXN0b3JhZ2UuYmxvYi5jb3JlLndpbm
  ![8](https://user-images.githubusercontent.com/54676091/92076344-97016980-ede4-11ea-9b0a-a7aaf3214313.jpg)     
                     *Xác minh nền tảng bản phân phối
      - Sau khi hoàn thành các bước, bạn sẽ biết liệu tiến trình đã được thực hiện thành công chưa hay có cần khắc phục bất kỳ bước nào không.
-                    
+.
+.
+.
+# Cài đặt Docker trên môi trường vscode    
+
+- Khi bạn đã cài đặt Visual Studio Code, hãy mở nó, nhấp vào phần mở rộng ở khung bên trái nhất và tìm kiếm Docker.
+![11](https://user-images.githubusercontent.com/54676091/92078374-586dae00-ede8-11ea-9115-0692f614c32b.png)
+Sau khi cài đặt, bạn sẽ nhận thấy một vài điều mới trong phiên bản Visual Studio Code của mình. Ở khung ngoài cùng bên trái, có một phần Docker mới với biểu tượng Docker, khi được nhấp vào sẽ mở Docker Explorer với ba phần. 
+-Images
+-Containers
+-Registries
+![12312](https://user-images.githubusercontent.com/54676091/92078506-91a61e00-ede8-11ea-8dd0-91148fa598dd.png)
+
+.
+- Ngoài ra còn có một số lệnh được thêm vào bảng lệnh, bạn có thể xem bằng cách mở bảng lệnh và nhập vào docker
+
+![22](https://user-images.githubusercontent.com/54676091/92078545-ab476580-ede8-11ea-9d44-1bb0b51d2690.png)
+
+# ----------------------------------
+
+# Cài đặt Docker trên môi trường linux(Hướng dẫn cài đặt Docker trên Ubuntu)
+
+- Trên Ubuntu bạn cũng có thể cài đặt Docker Desktop
+Hoặc cài đặt thông qua command line bên dưới:
+
+- Gỡ bỏ phiên bản cũ của Docker nếu đã cài đặt
+
+ *sudo apt-get remove docker docker-engine docker.io containerd runc
+
+- Cập nhật các package cần thiết
+*sudo apt-get update
+sudo apt-get install \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    gnupg-agent \
+    software-properties-common
+         
+- Thêm Docker GPG key        
+           
+ *curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
  
-                          
+ ![789](https://user-images.githubusercontent.com/54676091/92080170-4c372000-edeb-11ea-84a9-1006649a9503.png)
+ 
+- Bổ sung repository
+*sudo add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable"
+   
+                 
+- Cài đặt Docker CE                        
+*sudo apt-get update
+sudo apt-get install docker-ce docker-ce-cli containerd.io
+
+.
+- Tạo container đầu tiên của bạn
+*sudo docker run hello-world
+
+.
+![8749](https://user-images.githubusercontent.com/54676091/92080339-9b7d5080-edeb-11ea-94b6-5198dc39591f.png)
+
+(Bổ sung sau)
+Hết
