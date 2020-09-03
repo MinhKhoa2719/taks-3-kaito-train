@@ -171,13 +171,90 @@ Mình thử chạy vài lệnh với docker trên Powershell để kiểm tra v�
 
 # -------------------------------------------------------------
 
-# Cài đặt WSL + cấu hình với Docker
-Sau khi cài đặt docker thành công
-- Cần mang lại Konsole về Windows
+# Giới thiệu WSL 2
+- Windows Subsystem for Linux (WSL) là gì
+*Là “thứ” cho phép mình chạy linux tools như grep, vi, cat trên windows như đang chạy trên linux. WSL còn cho phép mình cài đặt các chương trình linux bằng apt-get nếu mình đang dùng ubuntu.
+- Windows Subsystem for Linux phiên bản 2 (WSL 2), đây là phiên bản mới của kiến trúc cho phép chạy Linux trên Windows 10 nguyên bản (sử dụng máy ảo nhẹ) và cuối cùng thay thế WSL 1.
+- Hướng dẫn Cài đặt Windows Subsystem for Linux (WSL 2) trên phiên bản Windows 10 2004.
+
+# Kích hoạt Windows Subsystem for Linux 1
 
 
+- Nếu chưa sử dụng Linux trên Windows 10, bạn phải kích hoạt Windows Subsystem for Linux phiên bản 1 với các bước sau:
+
+- 1. Mở Start.
+
+- 2. Tìm kiếm Turn Windows features on or off và nhấp vào kết quả trên cùng để mở trải nghiệm.
+
+- 3. Tích vào tùy chọn Windows Subsystem for Linux.
+
+![4](https://user-images.githubusercontent.com/54676091/92075811-7be22a00-ede3-11ea-9026-0be78fc319db.jpg)
+                       *Tích vào tùy chọn Windows Subsystem for Linux
+
+- 4. Nhấp vào nút OK.
+
+- 5. Nhấp vào nút Restart.
+
+- Khi hoàn thành các bước, bạn cần kích hoạt tính năng Virtual Machine Platform. Theo Microsoft, đây là một bước tùy chọn, nhưng nếu không bật tính năng ảo hóa, bạn không thể sử dụng kiến ​​trúc mới.
 
 
+# Kích hoạt Virtual Machine Platform
+Để bật Virtual Machine Platform trên Windows 10, hãy làm theo các bước sau:
+
+"Lưu ý quan trọng": Bo mạch chủ và bộ xử lý phải hỗ trợ ảo hóa, đồng thời tùy chọn phải được bật trên BIOS/UEFI.
+
+1. Mở Start.
+
+2. Tìm kiếm PowerShell, bấm chuột phải vào kết quả trên cùng và chọn tùy chọn Run as administrator.
+
+3. Nhập lệnh sau để bật tính năng Virtual Machine Platform và nhấn Enter:
+*Enable-WindowsOptionalFeature -Online -FeatureName VirtualMachinePlatform
+
+![5](https://user-images.githubusercontent.com/54676091/92075960-be0b6b80-ede3-11ea-91a8-e293ed0846ec.jpg)
+                        *Bật tính năng Virtual Machine Platform
+                        
+4. Khởi động lại máy tính.
+
+- Sau khi hoàn thành các bước, bạn có thể thiết lập Windows Subsystem for Linux phiên bản 2 cho kiến ​​trúc mặc định mới và chuyển đổi các bản phát hành hiện có.     
+
+.
+
+# Kích hoạt Windows Subsystem for Linux 2
+Để bắt đầu sử dụng WSL 2 hoặc chuyển đổi các bản phân phối WSL 1 thành WSL 2, hãy làm theo các bước sau:
+
+- 1. Tải xuống bản cập nhật kernel WSL 2 này (bắt buộc).
+https://quantrimang.com/url?q=aHR0cHM6Ly93c2xzdG9yZXN0b3JhZ2UuYmxvYi5jb3JlLndpbmRvd3MubmV0L3dzbGJsb2Ivd3NsX3VwZGF0ZV94NjQubXNp
 
 
+- 2. Bấm đúp vào file wsl_update_x64.msi và áp dụng bản cập nhật.
 
+- 3. Mở Start.
+
+- 4. Mở PowerShell với quyền admin.
+
+- 5. Nhập lệnh sau để biến Windows Subsystem for Linux 2 thành kiến ​​trúc mặc định cho các bản phát hành mới mà bạn cài đặt và nhấn Enter:
+          *wsl --set-default-version 2
+![6](https://user-images.githubusercontent.com/54676091/92076090-17739a80-ede4-11ea-8e8c-c4a1396a9a5c.jpg)
+                    *Biến Windows Subsystem for Linux 2 thành kiến ​​trúc mặc định
+- 6. Nhập lệnh sau để chuyển đổi bản phân phối từ WSL 1 sang WSL 2 và nhấn Enter:
+
+                          *wsl --set-version Ubuntu 2
+                          
+![7](https://user-images.githubusercontent.com/54676091/92076134-35d99600-ede4-11ea-8134-26a64d62ada5.jpg)
+                          *Chuyển đổi bản phân phối từ WSL 1 sang WSL 2
+                          
+- 7. Trong lệnh, đảm bảo thay đổi Ubuntu thành tên của bản phân phối mà bạn muốn chuyển đổi. Nếu không biết tên, bạn có thể sử dụng lệnh wsl -l -v.
+
+- Khi hoàn thành các bước, thiết bị của bạn sẽ bắt đầu sử dụng phiên bản mới của Windows Subsystem for Linux làm kiến ​​trúc mặc định.   
+
+- Xác minh nền tảng bản phân phối
+   Để xác nhận rằng các bản phân phối của bạn đang sử dụng Windows Subsystem for Linux 2
+   Mở PowerShell với quyền admin.sử dụng lệnh:
+            *wsl --list --verbose
+                           
+ ![8](https://user-images.githubusercontent.com/54676091/92076344-97016980-ede4-11ea-9b0a-a7aaf3214313.jpg)     
+                    *Xác minh nền tảng bản phân phối
+     - Sau khi hoàn thành các bước, bạn sẽ biết liệu tiến trình đã được thực hiện thành công chưa hay có cần khắc phục bất kỳ bước nào không.
+                    
+ 
+                          
