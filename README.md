@@ -289,7 +289,7 @@ https://www.docker.com/products/docker-desktop.
 
 *Mở file cài đặt thì ăn ngay quả message Hyper-V feature is required
 
-Mà cái feature này lại không có trên Windows 10 Home. Quá nhọ! Lại phải cài lại Win và xin ngay quả key cho Windows 10 Enterprise 😄
+Mà cái feature này lại không có trên Windows 10 Home. Quá nhọ! Lại phải cài lại Win và xin ngay quả key cho Windows 10 Enterprise 😄 (Cài lại win cho khỏe)
 
 - Thế nên muốn dùng docker trên windows 10 thì phải xem xét điều này trước tiên
 
