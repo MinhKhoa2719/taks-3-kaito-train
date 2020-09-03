@@ -35,7 +35,7 @@ của các nhà cung cấp như : AWS, Google Cloud, Microsoft Azure.
 
 
 
-#--------
+# --------
 
 - Docker là một dự án mã nguồn mở giúp tự động triển khai các ứng dụng Linux và Window vào trong các container ảo hóa,
 
@@ -52,8 +52,7 @@ lắng ở máy của lập trình viên chạy được, máy khác lại khôn
 
 - Docker sử dụng những tài nguyên cô lập của linux như cgroup,kernel. quản lý têp để cho 
 
-
-- phép các container chạy độc lập bên trong một thực thể linux
+ phép các container chạy độc lập bên trong một thực thể linux
 
 
 
@@ -92,34 +91,25 @@ chuyển nó tới bất kỳ hệ thống nào có chạy docker engine là nó
 linux rồi mới có thể thực thi được.
 
 
-
-
 - Không phải app nào củng containerized được.
-
 
 
 - Container nó sài shared OS kernel Linux nên nếu có vấn đề gì ảnh hưởng tới OS kernel của Node thì nó củng bị ảnh hưởng.
 
 
-
 - Số lượng container càng lớn thì càng phức tạp.
-
 
 
 - Phải follow và improve liên tục nếu muốn chạy nó trên production để control được Docker vì nó không có stable ( điều này là dĩ nhiên vì đây là open source )
 
 
-
 # Container trong Docker
-
 
 
 - Các container cho phép lập trình viên đóng gói một ứng dụng với tất cả các phần cần thiết,chẳng hạn như thư viện và các phụ thuốc khác và gói tất cả ra dưới 
 
 
-
 dạng một package
-
 
 
 - Bằng cách đó, nhờ vào container, ứng dụng sẽ chạy trên mọi máy Linux khác bất kể mọi cài đặt tùy chỉnh mà máy có thể có khác với máy được sử dụng để viết 
@@ -130,15 +120,12 @@ ccode,
 
 
 
-
 - Theo một cách nào đó ,Docker khá giống với virtual machine,Nhưng nguyên nhân mà Docker Phát triển là do:
-
 
 
 # Tính dễ ứng dụng:
 
 - Rất dễ cho mọi người sử dụng từ lập trình viên,sys admin...
-
 
 
 nó tận dụng lợi thế của container để build, test nhanh chóng,có thể đóng gói ứng dụng trên laptop của họ và chạy trên public cloud,private cloud...
@@ -148,11 +135,9 @@ nó tận dụng lợi thế của container để build, test nhanh chóng,có 
 - Câu thần chú là "Build once,run anywhere".
 
 
-
 # Docker container rất nhẹ và nhanh:
 
 - Bạn có thể tạo và chạy docker container trong vài giây
-
 
 
 # Môi trường chạy và khả năng mở rộng: 
@@ -160,13 +145,10 @@ nó tận dụng lợi thế của container để build, test nhanh chóng,có 
 - Bạn có thể chia nhỏ những chức năng của ứng dụng thành các container riêng lẻ . 
 
 
-
 - Ví dụ trong database chạy trên một container và redis cache có thể chạy trên một container khác trong khi ứng dụng Node.js lại chạy trên một cái khác nữa 
 
 
-
 - Với docker rất dễ để liên kết các container với nhau để tạo thành một ứng dụng, làm cho nó dễ dàng scale,update các thành phần độc lập với nhau.
-
 
 
 - Là thành phần quan trọng trong một phần của devops
@@ -174,10 +156,7 @@ nó tận dụng lợi thế của container để build, test nhanh chóng,có 
 
 
 
-
-- Các khái niệm liên quan
-
-
+- Các khái niệm liên quan 
 
 
 
@@ -233,7 +212,7 @@ với nhau để quản lý các Docker Service.
 
 # Như trong hình vẽ, một hệ thống Docker được thực thi với 3 bước chính :
 
-- Build -> Push -> Pull,Run
+- *Build -> Push -> Pull,Run
 
 
 
@@ -308,7 +287,7 @@ Windows support "cài cả Ubuntu trên Win"
 
 https://www.docker.com/products/docker-desktop.
 
-*mở file cài đặt thì ăn ngay quả message Hyper-V feature is required
+*Mở file cài đặt thì ăn ngay quả message Hyper-V feature is required
 
 Mà cái feature này lại không có trên Windows 10 Home. Quá nhọ! Lại phải cài lại Win và xin ngay quả key cho Windows 10 Enterprise 😄
 
@@ -438,15 +417,15 @@ dụng kiến ​​trúc mới.
 
 
 
-1. Mở Start.
+- 1. Mở Start.
 
 
 
-2. Tìm kiếm PowerShell, bấm chuột phải vào kết quả trên cùng và chọn tùy chọn Run as administrator.
+- 2. Tìm kiếm PowerShell, bấm chuột phải vào kết quả trên cùng và chọn tùy chọn Run as administrator.
 
 
 
-3. Nhập lệnh sau để bật tính năng Virtual Machine Platform và nhấn Enter:
+- 3. Nhập lệnh sau để bật tính năng Virtual Machine Platform và nhấn Enter:
 
 *Enable-WindowsOptionalFeature -Online -FeatureName VirtualMachinePlatform
 
@@ -458,7 +437,7 @@ dụng kiến ​​trúc mới.
 
 
 
-4. Khởi động lại máy tính.
+- 4. Khởi động lại máy tính.
 
 
 
@@ -472,27 +451,27 @@ dụng kiến ​​trúc mới.
 
 # Kích hoạt Windows Subsystem for Linux 2
 
-Để bắt đầu sử dụng WSL 2 hoặc chuyển đổi các bản phân phối WSL 1 thành WSL 2, hãy làm theo các bước sau:
+- Để bắt đầu sử dụng WSL 2 hoặc chuyển đổi các bản phân phối WSL 1 thành WSL 2, hãy làm theo các bước sau:
 
 
 
-- 1. Tải xuống bản cập nhật kernel WSL 2 này (bắt buộc).
+- *1. Tải xuống bản cập nhật kernel WSL 2 này (bắt buộc).
 
 https://quantrimang.com/url?q=aHR0cHM6Ly93c2xzdG9yZXN0b3JhZ2UuYmxvYi5jb3JlLndpbmRvd3MubmV0L3dzbGJsb2Ivd3NsX3VwZGF0ZV94NjQubXNp
 
 
 
-- 2. Bấm đúp vào file wsl_update_x64.msi và áp dụng bản cập nhật.
+- *2. Bấm đúp vào file wsl_update_x64.msi và áp dụng bản cập nhật.
 
 
-- 3. Mở Start.
+- *3. Mở Start.
 
 
-- 4. Mở PowerShell với quyền admin.
+- *4. Mở PowerShell với quyền admin.
 
 
 
-- 5. Nhập lệnh sau để biến Windows Subsystem for Linux 2 thành kiến ​​trúc mặc định cho các bản phát hành mới mà bạn cài đặt và nhấn Enter:
+- *5. Nhập lệnh sau để biến Windows Subsystem for Linux 2 thành kiến ​​trúc mặc định cho các bản phát hành mới mà bạn cài đặt và nhấn Enter:
 
 *wsl --set-default-version 2
 
@@ -500,7 +479,7 @@ https://quantrimang.com/url?q=aHR0cHM6Ly93c2xzdG9yZXN0b3JhZ2UuYmxvYi5jb3JlLndpbm
 
 *Biến Windows Subsystem for Linux 2 thành kiến ​​trúc mặc định
 
-- 6. Nhập lệnh sau để chuyển đổi bản phân phối từ WSL 1 sang WSL 2 và nhấn Enter:
+- *6. Nhập lệnh sau để chuyển đổi bản phân phối từ WSL 1 sang WSL 2 và nhấn Enter:
 
 
 
@@ -514,7 +493,7 @@ https://quantrimang.com/url?q=aHR0cHM6Ly93c2xzdG9yZXN0b3JhZ2UuYmxvYi5jb3JlLndpbm
 
 
 
-- 7. Trong lệnh, đảm bảo thay đổi Ubuntu thành tên của bản phân phối mà bạn muốn chuyển đổi. Nếu không biết tên, bạn có thể sử dụng lệnh wsl -l -v.
+- *7. Trong lệnh, đảm bảo thay đổi Ubuntu thành tên của bản phân phối mà bạn muốn chuyển đổi. Nếu không biết tên, bạn có thể sử dụng lệnh wsl -l -v.
 
 
 
@@ -592,7 +571,7 @@ Sau khi cài đặt, bạn sẽ nhận thấy một vài điều mới trong phi
 
 
 
-# Cài đặt Docker trên môi trường linux(Hướng dẫn cài đặt Docker trên Ubuntu)
+# Cài đặt Docker trên môi trường linux (Hướng dẫn cài đặt Docker trên Ubuntu)
 
 
 
